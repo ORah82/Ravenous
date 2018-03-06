@@ -21,10 +21,10 @@ class SearchBar extends React.Component {
         };
  }
 
-getSortByClass(sortByOption) {
-        ({best_match : sortByOption ? 'active' : ' '
-        })
-      }
+ getSortByClass(sortByOption) {
+   return (this.state.sortBy === sortByOption) ? 'active' : '';
+ }
+
 
 handleSortByChange(sortByOption) {
   this.setState({sortBy : sortByOption})
@@ -68,7 +68,7 @@ handleSearch(event) {
           <input placeholder="Where?" onChange= {this.handleLocationChange} />
         </div>
         <div className="SearchBar-submit">
-          <a>Let's Go</a>
+          <a onClick={this.handleSearch}>Let's Go</a>
         </div>
       </div>
     );
